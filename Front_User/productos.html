@@ -4,17 +4,62 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Productos</title>
 
-<link rel="stylesheet" href="/css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
 
+body{
+    background:#f4f6f9;
+}
+
 .productos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card-producto{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    padding:15px;
+    background:white;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card-producto:hover{
+    transform:translateY(-5px);
+}
+
+.btn-add{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    border-radius:10px;
+}
+
+.btn-add:hover{
+    background:#218838;
+}
+
+.navbar{
+    background:#2c3e50;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
 }
 
 </style>
@@ -23,74 +68,64 @@ gap:20px;
 
 <body>
 
+<!-- NAV -->
 <nav class="navbar">
 
-<div class="logo">
-Mi Despensa Virtual
-</div>
+    <div><strong>🛒 Mi Despensa Virtual</strong></div>
 
-<div class="menu">
-<a href="carrito.html">Carrito</a>
-</div>
+    <div>
+        <a href="carrito.html">Ver Carrito 🛍</a>
+    </div>
 
 </nav>
 
-<div class="container">
+<div class="container py-5">
 
-<h2>Productos</h2>
-
-<br>
+<h2 class="mb-4">Productos disponibles</h2>
 
 <div class="productos">
 
-<div class="card">
+    <div class="card-producto">
+        <h4>Arroz</h4>
+        <p>$1.25</p>
+        <button class="btn-add" onclick="agregar('Arroz',1.25)">Agregar</button>
+    </div>
 
-<img src="https://via.placeholder.com/250"
-width="100%">
+    <div class="card-producto">
+        <h4>Azúcar</h4>
+        <p>$1.50</p>
+        <button class="btn-add" onclick="agregar('Azúcar',1.50)">Agregar</button>
+    </div>
 
-<h3>Arroz</h3>
-
-<p>$1.25</p>
-
-<button class="btn">
-Agregar
-</button>
-
-</div>
-
-<div class="card">
-
-<img src="https://via.placeholder.com/250"
-width="100%">
-
-<h3>Azúcar</h3>
-
-<p>$1.50</p>
-
-<button class="btn">
-Agregar
-</button>
-
-</div>
-
-<div class="card">
-
-<img src="https://via.placeholder.com/250"
-width="100%">
-
-<h3>Leche</h3>
-
-<p>$1.10</p>
-
-<button class="btn">
-Agregar
-</button>
+    <div class="card-producto">
+        <h4>Leche</h4>
+        <p>$1.10</p>
+        <button class="btn-add" onclick="agregar('Leche',1.10)">Agregar</button>
+    </div>
 
 </div>
 
 </div>
 
-</div>
+<script>
+
+function agregar(nombre, precio){
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.push({
+        nombre: nombre,
+        precio: precio,
+        cantidad: 1
+    });
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert(nombre + " agregado al carrito 🛒");
+
+}
+
+</script>
 
 </body>
 

@@ -1,1 +1,123 @@
-<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><title>Pedidos Admin</title></head><body><h1>Pedidos Admin</h1><p>Contenido en construcción.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pedidos Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table thead {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .table tbody tr:hover {
+            background: #f1f5ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="card">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">🛒 Pedidos Admin</h3>
+
+            <button class="btn btn-light btn-sm">
+                + Nuevo Pedido
+            </button>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Buscar pedido...">
+                </div>
+
+                <div class="col-md-6 text-end">
+                    <span class="badge bg-success">Completados: 1</span>
+                    <span class="badge bg-warning text-dark">Pendientes: 1</span>
+                    <span class="badge bg-danger">Cancelados: 1</span>
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover text-center align-middle">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#001</td>
+                            <td>Juan Pérez</td>
+                            <td>$25.80</td>
+                            <td>28/06/2026</td>
+                            <td><span class="badge bg-success">Completado</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#002</td>
+                            <td>María Gómez</td>
+                            <td>$48.00</td>
+                            <td>27/06/2026</td>
+                            <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#003</td>
+                            <td>Carlos López</td>
+                            <td>$12.50</td>
+                            <td>26/06/2026</td>
+                            <td><span class="badge bg-danger">Cancelado</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+            <strong>Total de pedidos: 3</strong>
+            <strong>Ingresos: $86.30</strong>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -2,29 +2,136 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mis Pedidos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table thead {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .table tbody tr:hover {
+            background: #f1f5ff;
+        }
+
+        .badge {
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <h1>Mis Pedidos</h1>
+<div class="container py-5">
 
-    <table border="1">
+    <div class="card">
 
-        <tr>
-            <th>ID</th>
-            <th>Fecha</th>
-            <th>Estado</th>
-        </tr>
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
 
-        <tr>
-            <td>1</td>
-            <td>28/06/2026</td>
-            <td>Pendiente</td>
-        </tr>
+            <h3 class="mb-0">🛒 Mis Pedidos</h3>
 
-    </table>
+            <a href="home.html" class="btn btn-light btn-sm">
+                Seguir Comprando
+            </a>
+
+        </div>
+
+        <div class="card-body">
+
+            <!-- RESUMEN -->
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+                    <div class="p-3 bg-light rounded text-center">
+                        <h5>1</h5>
+                        <small>Total pedidos</small>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 bg-light rounded text-center">
+                        <h5>$25.80</h5>
+                        <small>Total gastado</small>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 bg-light rounded text-center">
+                        <h5>1</h5>
+                        <small>Pendientes</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TABLA -->
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover text-center align-middle">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#001</td>
+                            <td>28/06/2026</td>
+                            <td>$25.80</td>
+                            <td>
+                                <span class="badge bg-warning text-dark">
+                                    Pendiente
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">Ver</button>
+                                <button class="btn btn-danger btn-sm">Cancelar</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer text-muted d-flex justify-content-between">
+
+            <span>Mi Despensa Virtual</span>
+            <span>Sistema de pedidos activo</span>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 

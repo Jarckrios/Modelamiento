@@ -2,48 +2,121 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturas</title>
 
-<meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>Facturas</title>
+    <style>
+        body{
+            background-color:#f5f7fa;
+        }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        .card{
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table thead{
+            background:#0d6efd;
+            color:white;
+        }
+
+        .table tbody tr:hover{
+            background:#f1f5ff;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container mt-5">
+<div class="container py-5">
 
-<h2>Facturas</h2>
+    <div class="card">
 
-<table class="table">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">📄 Facturas</h3>
 
-<tr>
+            <button class="btn btn-light btn-sm">
+                + Nueva Factura
+            </button>
+        </div>
 
-<th>#</th>
+        <div class="card-body">
 
-<th>Cliente</th>
+            <div class="table-responsive">
 
-<th>Total</th>
+                <table class="table table-bordered table-hover align-middle text-center">
 
-<th>Fecha</th>
+                    <thead>
 
-</tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                        </tr>
 
-<tr>
+                    </thead>
 
-<td>001</td>
+                    <tbody>
 
-<td>Juan Pérez</td>
+                        <tr>
+                            <td>001</td>
+                            <td>Juan Pérez</td>
+                            <td>$25.80</td>
+                            <td>28/06/2026</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Pagada
+                                </span>
+                            </td>
+                        </tr>
 
-<td>$25.80</td>
+                        <tr>
+                            <td>002</td>
+                            <td>María Gómez</td>
+                            <td>$48.20</td>
+                            <td>27/06/2026</td>
+                            <td>
+                                <span class="badge bg-warning text-dark">
+                                    Pendiente
+                                </span>
+                            </td>
+                        </tr>
 
-<td>28/06/2026</td>
+                        <tr>
+                            <td>003</td>
+                            <td>Carlos López</td>
+                            <td>$16.90</td>
+                            <td>26/06/2026</td>
+                            <td>
+                                <span class="badge bg-danger">
+                                    Vencida
+                                </span>
+                            </td>
+                        </tr>
 
-</tr>
+                    </tbody>
 
-</table>
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+
+            <strong>Total de facturas: 3</strong>
+
+            <strong>Total vendido: $90.90</strong>
+
+        </div>
+
+    </div>
 
 </div>
 

@@ -3,43 +3,107 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Usuarios</title>
+    <title>Usuarios</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table thead {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .table tbody tr:hover {
+            background: #f1f5ff;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container mt-5">
+<div class="container py-5">
 
-<h2>Usuarios Registrados</h2>
+    <div class="card">
 
-<table class="table table-striped">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">👥 Usuarios Registrados</h3>
 
-<tr>
+            <button class="btn btn-light btn-sm">
+                + Nuevo Usuario
+            </button>
+        </div>
 
-<th>Nombre</th>
+        <div class="card-body">
 
-<th>Correo</th>
+            <div class="row mb-3">
 
-<th>Rol</th>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Buscar usuario...">
+                </div>
 
-</tr>
+                <div class="col-md-6 text-end">
+                    <span class="badge bg-primary">Total: 1</span>
+                    <span class="badge bg-success">Clientes</span>
+                    <span class="badge bg-warning text-dark">Admins</span>
+                </div>
 
-<tr>
+            </div>
 
-<td>Juan Pérez</td>
+            <div class="table-responsive">
 
-<td>juan@gmail.com</td>
+                <table class="table table-striped table-hover text-center align-middle">
 
-<td>Cliente</td>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
 
-</tr>
+                    <tbody>
 
-</table>
+                        <tr>
+                            <td>Juan Pérez</td>
+                            <td>juan@gmail.com</td>
+                            <td><span class="badge bg-success">Cliente</span></td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">✏️ Editar</button>
+                                <button class="btn btn-danger btn-sm">🗑 Eliminar</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+            <strong>Total usuarios: 1</strong>
+            <strong>Sistema activo</strong>
+        </div>
+
+    </div>
 
 </div>
 

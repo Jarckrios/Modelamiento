@@ -3,81 +3,113 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Productos</title>
+    <title>Productos</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table thead {
+            background: #198754;
+            color: white;
+        }
+
+        .table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .btn {
+            border-radius: 8px;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container mt-5">
+<div class="container py-5">
 
-<h2>Gestión de Productos</h2>
+    <div class="card">
 
-<hr>
+        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">📦 Gestión de Productos</h3>
 
-<a href="agregar-producto.html" class="btn btn-success mb-3">
+            <a href="agregar-producto.html" class="btn btn-light btn-sm">
+                + Nuevo Producto
+            </a>
+        </div>
 
-Nuevo Producto
+        <div class="card-body">
 
-</a>
+            <div class="row mb-3">
 
-<table class="table table-bordered table-hover">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Buscar producto...">
+                </div>
 
-<thead class="table-success">
+                <div class="col-md-6 text-end">
+                    <span class="badge bg-primary">Total: 1</span>
+                    <span class="badge bg-success">En stock: 1</span>
+                    <span class="badge bg-danger">Agotados: 0</span>
+                </div>
 
-<tr>
+            </div>
 
-<th>ID</th>
+            <div class="table-responsive">
 
-<th>Nombre</th>
+                <table class="table table-bordered table-hover text-center align-middle">
 
-<th>Precio</th>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
 
-<th>Stock</th>
+                    <tbody>
 
-<th>Acciones</th>
+                        <tr>
+                            <td>1</td>
+                            <td>Arroz</td>
+                            <td>$1.25</td>
+                            <td>35</td>
+                            <td><span class="badge bg-success">Disponible</span></td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">✏️ Editar</button>
+                                <button class="btn btn-danger btn-sm">🗑 Eliminar</button>
+                            </td>
+                        </tr>
 
-</tr>
+                    </tbody>
 
-</thead>
+                </table>
 
-<tbody>
+            </div>
 
-<tr>
+        </div>
 
-<td>1</td>
+        <div class="card-footer d-flex justify-content-between">
+            <strong>Última actualización: hoy</strong>
+            <strong>Sistema de inventario activo</strong>
+        </div>
 
-<td>Arroz</td>
-
-<td>$1.25</td>
-
-<td>35</td>
-
-<td>
-
-<button class="btn btn-warning btn-sm">
-
-Editar
-
-</button>
-
-<button class="btn btn-danger btn-sm">
-
-Eliminar
-
-</button>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+    </div>
 
 </div>
 
